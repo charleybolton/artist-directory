@@ -1,0 +1,48 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv package manager lockfile
+uv.lock
+
+# Coverage reports
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Pytest cache
+.pytest_cache/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Python egg files
+*.egg-info/
+dist/
+build/
+eggs/
+
+# Logs and databases
+*.log
+*.sqlite3
+
+# macOS system files
+.DS_Store
+
+# Terraform files (if you add terraform later)
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+
+# dotenv environment variables file (optional, if you use .env)
+.env
