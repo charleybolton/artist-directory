@@ -87,6 +87,6 @@ Future plans include frontend interfaces and user roles refinement.
 
 ---
 
-✍️ _The rest of this README (installation, Makefile usage, deployment notes, etc.) will be added as development continues._
+_The rest of this README (installation, Makefile usage, deployment notes, etc.) will be added as development continues._
 
 _This is an active work in progress — feel free to check back or follow updates in the repo._
