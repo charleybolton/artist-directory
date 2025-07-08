@@ -1,4 +1,4 @@
-name: FINAL UNDER-REP CI
+name: Artist Directory CI
 
 on:
   push:
