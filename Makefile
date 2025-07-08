@@ -1,4 +1,4 @@
-##@ 🛠️ Utility
+##@ Utility
 
 .PHONY: help
 help:  ## Shows all available commands and what each one does
@@ -6,7 +6,7 @@ help:  ## Shows all available commands and what each one does
 	/^[a-zA-Z_-]+:.*?##/ { printf "  %-22s %s\n", $$1, $$2 } \
 	/^##@/ { printf "\n%s\n", substr($$0, 5) }' $(MAKEFILE_LIST)
 
-##@ 🌱 Environment & Dependencies
+##@ Environment & Dependencies
 
 .PHONY: uv
 uv:  ## Installs uv (Python tool for managing dependencies + virtual env)
@@ -16,7 +16,7 @@ uv:  ## Installs uv (Python tool for managing dependencies + virtual env)
 sync: uv  ## Installs all Python packages listed in your pyproject.toml (creates a .venv if needed)
 	uv sync
 
-##@ ✅ Code Quality
+##@ Code Quality
 
 .PHONY: fix-all
 fix-all:  ## Formats Python files and lints code using Ruff
@@ -27,7 +27,7 @@ fix-all:  ## Formats Python files and lints code using Ruff
 safe:  ## Scans all Python code for security issues using Bandit
 	uv run bandit -r -lll src
 
-##@ 🧪 Testing
+##@ Testing
 
 .PHONY: test
 test:  ## Runs all unit tests using pytest
@@ -37,10 +37,16 @@ test:  ## Runs all unit tests using pytest
 cov:  ## Runs tests and generates a coverage report showing which lines were tested
 	uv run pytest --cov=src --cov-report=term-missing
 
-##@ 🚀 Project Setup
+##@ Project Setup
 
 .PHONY: checks
 checks: fix-all cov safe  ## Runs all code checks: format, lint, coverage, and security
 
 .PHONY: setup
 setup: sync checks  ## Installs dependencies and runs all checks to get project ready
+
+##@  CI Integration
+
+.PHONY: ci
+ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security)
+
