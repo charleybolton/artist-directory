@@ -24,6 +24,9 @@ jobs:
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+      
+      - name: Run Full Code Quality & Testing Suite
+        run: make ci
 
 # -- Terraform Steps (commented out while infra is in progress) --
 

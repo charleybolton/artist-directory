@@ -50,8 +50,34 @@ setup: sync checks  ## Installs dependencies and runs all checks to get project 
 .PHONY: ci
 ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security)
 
+---
+
 ##@ Infrastructure (TODO)
 
 .PHONY: infra
 infra:  ## (Not implemented yet) Placeholder for future Terraform deployment steps
 	@echo "Terraform infra steps coming soon..."
+
+##@ Database (TODO)
+
+.PHONY: db-init
+db-init:  ## (Not implemented) Setup or migrate the database schema
+	@echo "DB init/migration steps coming soon..."
+
+.PHONY: db-reset
+db-reset:  ## (Not implemented) Drop and reset local test database
+	@echo "DB reset steps coming soon..."
+
+##@ ETL Pipeline (TODO)
+
+.PHONY: etl
+etl:  ## (Not implemented) Run a test ETL pipeline or transformation
+	@echo "ETL pipeline steps coming soon..."
+
+##@ Application (TODO)
+
+.PHONY: dev
+dev:  ## (Not implemented) Run FastAPI app locally
+	@echo "FastAPI app server coming soon..."
+
+---
