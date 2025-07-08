@@ -50,3 +50,8 @@ setup: sync checks  ## Installs dependencies and runs all checks to get project 
 .PHONY: ci
 ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security)
 
+##@ Infrastructure (TODO)
+
+.PHONY: infra
+infra:  ## (Not implemented yet) Placeholder for future Terraform deployment steps
+	@echo "Terraform infra steps coming soon..."
