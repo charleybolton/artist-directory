@@ -50,8 +50,6 @@ setup: sync checks  ## Installs dependencies and runs all checks to get project 
 .PHONY: ci
 ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security)
 
----
-
 ##@ Infrastructure (TODO)
 
 .PHONY: infra
@@ -79,5 +77,3 @@ etl:  ## (Not implemented) Run a test ETL pipeline or transformation
 .PHONY: dev
 dev:  ## (Not implemented) Run FastAPI app locally
 	@echo "FastAPI app server coming soon..."
-
----
