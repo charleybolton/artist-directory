@@ -56,15 +56,10 @@ ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security
 infra:  ## (Not implemented yet) Placeholder for future Terraform deployment steps
 	@echo "Terraform infra steps coming soon..."
 
-##@ Database (TODO)
+##@ SQL (TODO)
 
-.PHONY: db-init
-db-init:  ## (Not implemented) Setup or migrate the database schema
-	@echo "DB init/migration steps coming soon..."
-
-.PHONY: db-reset
-db-reset:  ## (Not implemented) Drop and reset local test database
-	@echo "DB reset steps coming soon..."
+.PHONY: run-sql-files
+run-sql-files:  ## (Not implemented yet) Placeholder for future SQL execution steps
 
 ##@ ETL Pipeline (TODO)
 
