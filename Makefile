@@ -37,10 +37,29 @@ test:  ## Runs all unit tests using pytest
 cov:  ## Runs tests and generates a coverage report showing which lines were tested
 	uv run pytest --cov=src --cov-report=term-missing
 
-##@ 🚀 Project Setup
+##@ Project Setup
 
 .PHONY: checks
 checks: fix-all cov safe  ## Runs all code checks: format, lint, coverage, and security
 
 .PHONY: setup
 setup: sync checks  ## Installs dependencies and runs all checks to get project ready
+
+##@ Terraform
+
+.PHONY: tf-init
+tf-init:  ## Initializes Terraform
+	terraform init
+
+.PHONY: tf-plan
+tf-plan:  ## Shows Terraform execution plan
+	terraform plan
+
+.PHONY: tf-apply
+tf-apply:  ## Applies Terraform infrastructure
+	terraform apply
+
+.PHONY: tf-outputs
+tf-outputs:  ## Shows all Terraform outputs
+	terraform output
+
