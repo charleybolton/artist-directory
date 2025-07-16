@@ -45,6 +45,25 @@ checks: fix-all cov safe  ## Runs all code checks: format, lint, coverage, and s
 .PHONY: setup
 setup: sync checks  ## Installs dependencies and runs all checks to get project ready
 
+##@ Terraform
+
+.PHONY: tf-init
+tf-init:  ## Initializes Terraform
+	terraform init
+
+.PHONY: tf-plan
+tf-plan:  ## Shows Terraform execution plan
+	terraform plan
+
+.PHONY: tf-apply
+tf-apply:  ## Applies Terraform infrastructure
+	terraform apply
+
+.PHONY: tf-outputs
+tf-outputs:  ## Shows all Terraform outputs
+	terraform output
+
+
 ##@  CI Integration
 
 .PHONY: ci
