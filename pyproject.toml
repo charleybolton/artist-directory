@@ -1,26 +1,29 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "artist0directory"
+name = "artist_directory"
 version = "0.1.0"
-description = "A directory and discovery platform for underrepresented minority group DJs"
+description = "A directory and discovery platform for underrepresented DJs"
 readme = "README.md"
 requires-python = ">=3.10"
 
 dependencies = [
-    "boto3>=1.26.0",           # AWS SDK for Python
-    "pydantic>=2.0",           # Data validation
-    "pandas>=2.0",             # Data manipulation
-    "pyarrow>=12.0",           # Parquet and Arrow support
-    "fastapi>=0.95",           # API framework (optional for backend)
+    "boto3>=1.26.0",
+    "pydantic>=2.0",
+    "pandas>=2.0",
+    "pyarrow>=12.0",
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8.0",           # Testing framework
-    "pytest-cov>=4.0",       # Coverage reports for tests
-    "pytest-testdox>=0.3.4", # Enables --testdox option in pytest
-    "ruff>=0.11",            # Linter and formatter
-    "bandit>=1.8",           # Security scanner
-    "moto<=5.1.6",           # AWS mocking for tests (compatible with Python 3.13)
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "pytest-testdox>=0.3.4",
+    "ruff>=0.11",
+    "bandit>=1.8",
+    "moto<=5.1.6",
 ]
 
 [tool.pytest.ini_options]
@@ -36,8 +39,3 @@ extend-select = ["I"]
 
 [tool.ruff.format]
 docstring-code-format = true
-
-[tool.uv]
-
-[tool.uv.sources]
-# Example: vendored packages or wheels if needed
