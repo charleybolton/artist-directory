@@ -28,22 +28,34 @@ jobs:
       - name: Run Full Code Quality & Testing Suite
         run: make ci
 
-# ----------- Terraform Steps -----------
+ # ----------- Terraform Steps -----------
       - name: Install Terraform CLI
         uses: hashicorp/setup-terraform@v3
 
       - name: Terraform Init
         run: terraform init
         working-directory: infrastructure/terraform
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Format Check
         run: terraform fmt -check
         working-directory: infrastructure/terraform
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Validate
         run: terraform validate
         working-directory: infrastructure/terraform
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Plan
         run: terraform plan
         working-directory: infrastructure/terraform
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
