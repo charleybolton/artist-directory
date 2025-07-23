@@ -23,6 +23,10 @@ fix-all:  ## Formats Python files and lints code using Ruff
 	uv run ruff format --verbose ./src ./tests
 	uv run ruff check ./src ./tests --fix
 
+.PHONY: lint
+lint:  ## Lints Python files using Ruff (does not auto-fix)
+	uv run ruff check ./src ./tests
+
 .PHONY: safe
 safe:  ## Scans all Python code for security issues using Bandit
 	uv run bandit -r -lll src
@@ -45,35 +49,44 @@ checks: fix-all cov safe  ## Runs all code checks: format, lint, coverage, and s
 .PHONY: setup
 setup: sync checks  ## Installs dependencies and runs all checks to get project ready
 
-##@ Terraform
+##@ Infrastructure
+
+.PHONY: tf-validate
+tf-validate: ## Validates Terraform configuration files for syntax and internal consistency
+	terraform validate
+
+.PHONY: tf-format
+tf-format: ## Formats Terraform files to the canonical style
+	terraform fmt
 
 .PHONY: tf-init
-tf-init:  ## Initializes Terraform
+tf-init: ## Initialises Terraform working directory and downloads providers
 	terraform init
 
 .PHONY: tf-plan
-tf-plan:  ## Shows Terraform execution plan
-	terraform plan
+tf-plan: ## Generates an execution plan and saves it to 'tfplan'
+	terraform plan -out=tfplan
+
+.PHONY: tf-show-plan
+tf-show-plan:  ## Shows a human-readable version of the saved 'tfplan'
+	terraform show tfplan
 
 .PHONY: tf-apply
-tf-apply:  ## Applies Terraform infrastructure
-	terraform apply
+tf-apply: ## Applies the saved execution plan from 'tfplan'
+	terraform apply tfplan
+
+.PHONY: destroy
+destroy: ## Destroys the Terraform-managed infrastructure
+	terraform destroy
 
 .PHONY: tf-outputs
-tf-outputs:  ## Shows all Terraform outputs
+tf-outputs: ## Displays all Terraform output values
 	terraform output
-
 
 ##@  CI Integration
 
 .PHONY: ci
 ci: setup  ## Alias to run all setup steps for CI (install, lint, test, security)
-
-##@ Infrastructure (TODO)
-
-.PHONY: infra
-infra:  ## (Not implemented yet) Placeholder for future Terraform deployment steps
-	@echo "Terraform infra steps coming soon..."
 
 ##@ SQL (TODO)
 
