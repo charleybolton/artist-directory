@@ -15,8 +15,8 @@ module "db" {
   identifier = var.db_identifier
 
   engine            = "postgres"
-  engine_version    = "14.18"
-  family            = "postgres14"
+  engine_version    = "15.13"
+  family            = "postgres15"
   instance_class    = var.db_instance_class
   allocated_storage = var.db_allocated_storage
 
