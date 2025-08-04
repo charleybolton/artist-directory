@@ -26,4 +26,6 @@ module "db" {
 
   maintenance_window = var.maintenance_window
   backup_window      = var.backup_window
+
+  vpc_security_group_ids = [ "sg-0882960d2642e5aeb" ]
 }
