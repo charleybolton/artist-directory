@@ -49,6 +49,12 @@ jobs:
       - name: Install Terraform CLI
         uses: hashicorp/setup-terraform@v3
 
+      - name: Check AWS env vars
+        run: |
+          echo "AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}"
+          echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY:+set}"
+          echo "AWS_REGION=${AWS_REGION}"
+
       - name: Terraform Init
         run: terraform init
 
