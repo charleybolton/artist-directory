@@ -57,7 +57,7 @@ tf-validate: ## Validates Terraform configuration files for syntax and internal 
 
 .PHONY: tf-format
 tf-format: ## Formats Terraform files to the canonical style
-	terraform fmt
+	terraform fmt -recursive
 
 .PHONY: tf-init
 tf-init: ## Initialises Terraform working directory and downloads providers

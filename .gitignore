@@ -39,10 +39,11 @@ eggs/
 # macOS system files
 .DS_Store
 
-# Terraform files (if you add terraform later)
+# Terraform files
 terraform.tfstate
 terraform.tfstate.backup
 .terraform/
+*.tfvars
 
-# dotenv environment variables file (optional, if you use .env)
+# dotenv environment variables file
 .env
