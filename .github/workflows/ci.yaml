@@ -60,7 +60,7 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan with Debug Logs
-        run: terraform plan -no-color -input=false -lock-timeout=5m -verbose
+        run: terraform plan -no-color -input=false -lock-timeout=5m
 
   terraform-apply:
     name: Terraform Apply
