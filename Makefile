@@ -20,12 +20,12 @@ sync: uv  ## Installs all Python packages listed in your pyproject.toml (creates
 
 .PHONY: fix-all
 fix-all:  ## Formats Python files and lints code using Ruff
-	uv run ruff format --verbose ./src ./tests
-	uv run ruff check ./src ./tests --fix
+	uv run ruff format --verbose .
+	uv run ruff check . --fix
 
 .PHONY: lint
 lint:  ## Lints Python files using Ruff (does not auto-fix)
-	uv run ruff check ./src ./tests
+	uv run ruff check .
 
 .PHONY: safe
 safe:  ## Scans all Python code for security issues using Bandit
