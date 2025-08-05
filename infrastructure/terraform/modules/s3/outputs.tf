@@ -1,0 +1,1 @@
+ # Outputs like the bucket name and ARN for use in other modules.

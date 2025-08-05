@@ -1,0 +1,1 @@
+-- First DB migration – creates all the core tables.

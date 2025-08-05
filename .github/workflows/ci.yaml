@@ -62,7 +62,7 @@ jobs:
       - name: Terraform Validate
         run: terraform validate
 
-      - name: Terraform Plan with Debug Logs
+      - name: Terraform Plan
         run: terraform plan -no-color -input=false -lock-timeout=5m
 
   terraform-apply:

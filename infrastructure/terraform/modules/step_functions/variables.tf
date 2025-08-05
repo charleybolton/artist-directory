@@ -1,0 +1,1 @@
+# Workflow config inputs (e.g. state machine name, definitions).

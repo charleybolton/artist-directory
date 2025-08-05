@@ -1,0 +1,1 @@
+ # Some basic seed data for local testing (e.g. fake artists or promoters).

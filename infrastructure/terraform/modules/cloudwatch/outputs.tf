@@ -1,0 +1,1 @@
+# Useful for wiring alarms to SNS or Lambdas.

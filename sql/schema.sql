@@ -1,0 +1,1 @@
+-- My starting point for designing the database (artists, promoters, tokens, etc).

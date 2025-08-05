@@ -1,0 +1,1 @@
+ # Outputs like role ARNs to attach to resources.

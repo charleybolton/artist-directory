@@ -1,0 +1,1 @@
+# SNS topics to send alerts (e.g. momentum notifications to promoters).

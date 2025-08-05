@@ -1,0 +1,1 @@
+ # Inputs like log group names or alert thresholds.

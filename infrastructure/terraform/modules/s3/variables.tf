@@ -1,0 +1,1 @@
+# Inputs like bucket name, encryption, etc.
